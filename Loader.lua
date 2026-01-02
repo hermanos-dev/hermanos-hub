@@ -15,4 +15,4 @@ if not cfg then
     return
 end
 
-loadstring(game:HttpGet(cfg[script_mode] or cfg.PVP))()
+loadstring(game:HttpGet(cfg[(script_mode or "PVP"):upper()] or cfg.PVP))()
