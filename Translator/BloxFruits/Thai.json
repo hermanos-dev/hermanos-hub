@@ -13,7 +13,7 @@
       "General": { "title": "ทั่วไป" },
       "Combat": { "title": "ต่อสู้" },
       "ESP": { "title": "มองผู้เล่น" },
-      "Auto Bounty Hunt": { "title": "ล่าค่าหัวอัตโนมัติ" },
+      "BountyHunting": { "title": "ล่าค่าหัวอัตโนมัติ" },
       "Skills": { "title": "ตั้งค่าสกิล" },
       "Key Bind": { "title": "คีย์ลัด" },
       "Misc": { "title": "เบ็ดเตล็ด" },
