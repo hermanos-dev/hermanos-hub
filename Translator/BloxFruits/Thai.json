@@ -119,7 +119,20 @@
       "Ken Active": { "title": "เคนทำงาน", "desc": "แสดงสถานะเคน (Ken Active)" },
       "Pvp State": { "title": "สถานะ PvP", "desc": "แสดงสถานะ InCombat/Disable/Ready" }
     },
-  
+    
+    "bountyhunting": {
+        "Information:": { "title": "ข้อมูล:" },
+        "Bounty:": { "title": "ค่าหัว:" },
+
+        "Safe Mode:": { "title": "โหมดปลอดภัย:" },
+        "Safe Mode Health": { "title": "พลังชีวิตโหมดปลอดภัย", "desc": "พลังชีวิตโหมดปลอดภัย" },
+        "Safe Mode": { "title": "โหมดปลอดภัย", "desc": "เปิดโหมดปลอดภัย เมื่อ hp ถึงตามที่กำหนดจะวาปไปอยู่ที่โซนปลอดภัย" },
+        
+        "Bounty Hunting:": { "title": "ล่าค่าหัว:" },
+        "Auto Bounty Hunting": { "title": "ล่าค่าหัวอัตโนมัติ", "desc": "เปิดเพื่อล่าค่าหัวอัตโนมัติ" },
+        "Auto Hop Server": { "title": "เปิดใช้งานล่าค่าหัวอัตโนมัติ", "desc": "เปิดใช้งานล่าค่าหัวอัตโนมัติ" }
+    },
+
     "skills": {
       "Skills:": { "title": "สกิล:" },
   
@@ -135,7 +148,7 @@
   
     "keybind": {
       "Aimbot KeyBind": { "title": "คีย์ลัดเอมบอท", "desc": "ปุ่มสำหรับเปิด/ปิดเอมบอท" },
-      "Teleport Behide Target KeyBind": { "title": "คีย์ลัด TP หลังเป้า", "desc": "ปุ่มสำหรับเปิด/ปิด TP หลังเป้า" },
+      "Teleport Behide Target KeyBind": { "title": "คีย์ลัด TP ไปยังเป้าหมาย", "desc": "ปุ่มสำหรับเปิด/ปิด TP ไปที่เป้าหมาย" },
   
       "Mobile Buttons:": { "title": "ปุ่มมือถือ:" },
       "Show Camera Lock Button": { "title": "แสดงปุ่มล็อคกล้อง", "desc": "แสดง/ซ่อนปุ่ม Camera Lock บนจอ" },
