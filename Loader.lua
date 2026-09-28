@@ -1,7 +1,7 @@
 -- local script_mode = "PVP" -- PVP, FARM
 local scripts = {
     [6765805766] = { -- Block Spin
-        PVP  = "https://api.luarmor.net/files/v4/loaders/09dbbfa706ef5a1ffac1eaa7010a12f9.lua",
+        PVP  = "https://api.luarmor.net/files/v4/loaders/c07baff8edfc24b30c9f2a74218199d1.lua",
         FARM = "https://api.luarmor.net/files/v4/loaders/852734c92dc3fe02c7631c384dc06104.lua",
     },
     [994732206] = { -- Blox Fruits
