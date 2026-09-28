@@ -2,10 +2,10 @@
 local scripts = {
     [6765805766] = { -- Block Spin
         PVP  = "https://api.luarmor.net/files/v4/loaders/c07baff8edfc24b30c9f2a74218199d1.lua",
-        FARM = "https://api.luarmor.net/files/v4/loaders/852734c92dc3fe02c7631c384dc06104.lua",
+        FARM = "https://api.luarmor.net/files/v4/loaders/0c4940bf7e2a0b5130d3a83446c00f14.lua",
     },
     [994732206] = { -- Blox Fruits
-        PVP = "https://api.luarmor.net/files/v4/loaders/9c79c3f3d50ce9111a070d0a684a3062.lua",
+        PVP = "https://api.luarmor.net/files/v4/loaders/0c7ea360c9bca139fc70fff09aad7d8b.lua",
     }
 }
 
