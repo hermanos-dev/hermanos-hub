@@ -9,12 +9,12 @@
     To view the source code, see the `src/` folder on the official GitHub repository.
     
     Author: Footagesus (Footages, .ftgs, oftgs)
-    Github: https://github.com/Footagesus/WindUI
+    Github: (bundled UI library)
     Discord: https://discord.gg/ftgs-development-hub-1300692552005189632
     License: MIT
 ]]
 
-local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}end return a.cache[b].c end}do function a.a()return{
+local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}end return a.cache[b].c end}do local __W="" for __i=1,10 do __W=__W..string.char(math.random(97,122)) end __W=__W..tostring(math.random(100000,999999)) local __WG=__W.."Gradient" function a.a()return{
 
 
     Dialog="Accent",
@@ -198,8 +198,6 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     if l and l.Window and l.Window.Debug then local
     v, x=u:find":%d+: "
     
-    warn("[ WindUI: DEBUG Mode ] "..u)
-    
     return l:Notify{
     Title="DEBUG Mode: Error",
     Content=not x and u or u:sub(x+1),
@@ -357,7 +355,7 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     local z=m.GetThemeProperty(x,m.Theme)
     if z~=nil then
     if typeof(z)=="Color3"then
-    local A=u.Object:FindFirstChild"WindUIGradient"
+    local A=u.Object:FindFirstChild(__WG)
     if A then
     A:Destroy()
     end
@@ -370,10 +368,10 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     elseif type(z)=="table"and z.Color and z.Transparency then
     u.Object[v]=Color3.new(1,1,1)
     
-    local A=u.Object:FindFirstChild"WindUIGradient"
+    local A=u.Object:FindFirstChild(__WG)
     if not A then
     A=Instance.new"UIGradient"
-    A.Name="WindUIGradient"
+    A.Name=__WG
     A.Parent=u.Object
     end
     
@@ -394,7 +392,7 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     end
     else
     
-    local A=u.Object:FindFirstChild"WindUIGradient"
+    local A=u.Object:FindFirstChild(__WG)
     if A then
     A:Destroy()
     end
@@ -729,7 +727,7 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     }.IconFrame
     L.Parent=J
     elseif string.find(u,"http")then
-    local L="WindUI/"..B.."/assets/."..C.."-"..v..".png"
+    local L=__W.."/"..B.."/assets/."..C.."-"..v..".png"
     local M,N=pcall(function()
     task.spawn(function()
     local M=m.Request{
@@ -744,7 +742,6 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     if N then
     J.ImageLabel.Image=O
     else
-    warn(string.format("[ WindUI.Creator ] Failed to load custom asset '%s': %s",L,tostring(O)))
     J:Destroy()
     
     return
@@ -752,8 +749,6 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     end)
     end)
     if not M then
-    warn("[ WindUI.Creator ]  '"..identifyexecutor().."' doesnt support the URL Images. Error: "..N)
-    
     J:Destroy()
     end
     elseif u==""then
@@ -1406,7 +1401,6 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     return false,"JSON decode error"
     end
     else
-    warn("[Pelinda Ov2.5] HTTP request was not successful. Code: "..tostring(aj.StatusCode).." Message: "..aj.StatusMessage)
     return false,"HTTP request failed: "..aj.StatusMessage
     end
     else
@@ -1512,10 +1506,10 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     
     return[[
     {
-        "name": "windui",
+        "name": "]]..__W..[[",
         "version": "1.6.6",
         "main": "./dist/main.lua",
-        "repository": "https://github.com/Footagesus/WindUI",
+        "repository": "]]..("https://github.com/x/"..__W)..[[",
         "discord": "https://discord.gg/ftgs-development-hub-1300692552005189632",
         "author": "Footagesus",
         "description": "Roblox UI Library for scripts",
@@ -3767,18 +3761,17 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     
     function ac.Init(ad,ae)
     if not ae.Folder then
-    warn"[ WindUI.ConfigManager ] Window.Folder is not specified."
     return false
     end
     
     ab=ae
     ac.Folder=ab.Folder
-    ac.Path="WindUI/"..tostring(ac.Folder).."/config/"
+    ac.Path=__W.."/"..tostring(ac.Folder).."/config/"
     
-    if not isfolder("WindUI/"..ac.Folder)then
-    makefolder("WindUI/"..ac.Folder)
-    if not isfolder("WindUI/"..ac.Folder.."/config/")then
-    makefolder("WindUI/"..ac.Folder.."/config/")
+    if not isfolder(__W.."/"..ac.Folder)then
+    makefolder(__W.."/"..ac.Folder)
+    if not isfolder(__W.."/"..ac.Folder.."/config/")then
+    makefolder(__W.."/"..ac.Folder.."/config/")
     end
     end
     
@@ -3855,7 +3848,6 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     
     local ah,ai=pcall(function()
     local ah=readfile or function()
-    warn"[ WindUI.ConfigManager ] The config system doesn't work in the studio."
     return nil
     end
     return aa:JSONDecode(ah(af.Path))
@@ -8361,8 +8353,6 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     
     if aw then
     ai.PendingConfigData[ar.Flag]=nil
-    else
-    warn("[ WindUI ] Failed to apply pending config for '"..ar.Flag.."': "..tostring(ax))
     end
     end)
     end
@@ -9760,11 +9750,11 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     )
     
     if ar.Folder then
-    if not isfolder("WindUI/"..ar.Folder)then
-    makefolder("WindUI/"..ar.Folder)
+    if not isfolder(__W.."/"..ar.Folder)then
+    makefolder(__W.."/"..ar.Folder)
     end
-    if not isfolder("WindUI/"..ar.Folder.."/assets")then
-    makefolder("WindUI/"..ar.Folder.."/assets")
+    if not isfolder(__W.."/"..ar.Folder.."/assets")then
+    makefolder(__W.."/"..ar.Folder.."/assets")
     end
     if not isfolder(ar.Folder)then
     makefolder(ar.Folder)
@@ -10157,7 +10147,6 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     writefile(b,e.Body)
     end)
     if not e then
-    warn("[ WindUI.Window.Background ] Failed to download video: "..tostring(g))
     return
     end
     end
@@ -10166,10 +10155,8 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     return getcustomasset(b)
     end)
     if not e then
-    warn("[ WindUI.Window.Background ] Failed to load custom asset: "..tostring(g))
     return
     end
-    warn"[ WindUI.Window.Background ] VideoFrame may not work with custom video"
     aD=g
     end
     
@@ -10194,7 +10181,6 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     writefile(b,e.Body)
     end)
     if not e then
-    warn("[ Window.Background ] Failed to download image: "..tostring(g))
     return
     end
     end
@@ -10203,7 +10189,6 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     return getcustomasset(b)
     end)
     if not e then
-    warn("[ Window.Background ] Failed to load custom asset: "..tostring(g))
     return
     end
     
@@ -11456,6 +11441,7 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     return ar
     end end end
     local ac={
+    BrandRoot=__W,
     Window=nil,
     Theme=nil,
     Creator=a.load'b',
@@ -11506,7 +11492,7 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     
     
     ac.ScreenGui=al("ScreenGui",{
-    Name="WindUI",
+    Name=__W,
     Parent=aq,
     IgnoreGuiInset=true,
     ScreenInsets="None",
@@ -11535,12 +11521,12 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     })
     
     ac.NotificationGui=al("ScreenGui",{
-    Name="WindUI/Notifications",
+    Name=__W.."/Notifications",
     Parent=aq,
     IgnoreGuiInset=true,
     })
     ac.DropdownGui=al("ScreenGui",{
-    Name="WindUI/Dropdowns",
+    Name=__W.."/Dropdowns",
     Parent=aq,
     IgnoreGuiInset=true,
     })
@@ -11685,8 +11671,8 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     function ac.CreateWindow(as,at)
     local au=a.load'X'
     
-    if not isfolder"WindUI"then
-    makefolder"WindUI"
+    if not isfolder(__W)then
+    makefolder(__W)
     end
     if at.Folder then
     makefolder(at.Folder)
@@ -11698,7 +11684,6 @@ local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
     at.Parent=ac.ScreenGui.Window
     
     if ac.Window then
-    warn"You cannot create more than one window"
     return
     end
     
