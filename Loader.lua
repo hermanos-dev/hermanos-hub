@@ -4,6 +4,9 @@ local scripts = {
         PVP  = "https://api.luarmor.net/files/v4/loaders/c07baff8edfc24b30c9f2a74218199d1.lua",
         FARM = "https://api.luarmor.net/files/v4/loaders/0c4940bf7e2a0b5130d3a83446c00f14.lua",
     },
+    [6765805766] = { -- Urban Reload
+        PVP  = "https://api.luarmor.net/files/v4/loaders/e8fdcf46da42ce2dc8e57a45a020e4d0.lua",
+    },
     [994732206] = { -- Blox Fruits
         PVP = "https://api.luarmor.net/files/v4/loaders/0c7ea360c9bca139fc70fff09aad7d8b.lua",
     }
